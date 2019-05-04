@@ -1,9 +1,9 @@
 import discord
 from discord.ext import commands
 from discord import Game
+from config import TOKEN_KEY
 
-
-TOKEN= 'INSERT TOKEN HERE'
+TOKEN = TOKEN_KEY
 BOT_PREFIX = ['!', '?']
 
 

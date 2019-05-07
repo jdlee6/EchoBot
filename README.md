@@ -8,7 +8,8 @@ The creator of this program is "jdlee6" and the source for the bot can be found 
 
 # To Do:
 
-- [/]Implement Charts
-- [ ]Color Code % Changes
-- [ ]Customize Help Box
 - [x]Convert amnt of Coin -> USD value
+- [x]Color Code % Changes
+- [/]Implement Charts
+- [ ]Customize Help Box
+

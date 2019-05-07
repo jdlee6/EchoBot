@@ -46,18 +46,27 @@ class Info(commands.Cog):
             price = item['quote']['USD']['price']
             percent_change_24h = item['quote']['USD']['percent_change_24h']
             if item['name'] == coin:
-                await ctx.send(f'{coin}\nName: {name}\nSymbol: {symbol}\nCurrent rank: {cmc_rank}\nPrice: $ {round(price, 6)}\nPercent Change (24 Hrs): {round(percent_change_24h, 2)} %\n')
+                await ctx.send(f'```{coin}\nName: {name}\nSymbol: {symbol}\nCurrent rank: {cmc_rank}\nPrice: $ {round(price, 6)}\n```')
+                if str(percent_change_24h).startswith('-'):
+                    await ctx.send(f'```diff\n-Percent Change (24 Hrs): {percent_change_24h} %```')
+                elif not str(percent_change_24h).startswith('-'):
+                    await ctx.send(f'```diff\n+Percent Change (24 Hrs): {percent_change_24h} %```')
 
-
+                    
     @commands.command(name='usd', brief='Command that retrieves USD value of coin. (Ticker)')
     async def getusd(self, ctx, coin):
         usdValue = dict()
         for item in data['data']:
             symbol = item['symbol']
             price = item['quote']['USD']['price']
+            percent_change_24h = item['quote']['USD']['percent_change_24h']
             if item['symbol'] == coin:
                 usdValue[symbol] = price
-                await ctx.send(f'Price of {coin} is $ {round(price, 2)}') 
+                await ctx.send(f'```Price of {coin} is $ {round(price, 2)}```') 
+                if str(percent_change_24h).startswith('-'):
+                    await ctx.send(f'```diff\n-Percent Change (24 Hrs): {percent_change_24h} %```')
+                elif not str(percent_change_24h).startswith('-'):
+                    await ctx.send(f'```diff\n+Percent Change (24 Hrs): {percent_change_24h} %```')
 
 
     @commands.command(name='addy', brief='Command that retrieves token address of coin. (Ticker)')

@@ -17,7 +17,19 @@ class Convert(commands.Cog):
     def __init__(self, client):
         self.client = client
     
+    
+    #  Converts amount of any Coin to USD
+    @commands.command(name='toUSD', brief='Command that converts any amount of coin to USD')
+    async def toUSD(self, ctx, amnt, coin):
+        try:
+            x = float(amnt)
+            y = usd(coin)
+            totalUSD = x*y
+            await ctx.send(f'{amnt} {coin} is $' + str(round(float(totalUSD), 2)))
+        except Exception as e:
+            print(f'{e}')
 
+            
     #  Convert USD Amount to BTC
     @commands.command(name='toBTC', brief='Command that converts USD to BTC.')
     async def convertToBTC(self, ctx, usdAmnt):

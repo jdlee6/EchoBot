@@ -23,6 +23,20 @@ class Info(commands.Cog):
                 break
 
 
+    @commands.command(name='chartBTC', brief='Command that displays chart of coin to BTC (Ticker)')
+    async def chartBTC(self, ctx, coin):
+        for item in data['data']:
+            if item['symbol'] == coin:
+                await ctx.send(f'{coin} vs. BTC\nhttps://tradingview/chart{coin}BTC')
+
+
+    @commands.command(name='chartUSD', brief='Command that displays chart of coin to USD (Ticker)')
+    async def chartUSD(self, ctx, coin):
+        for item in data['data']:
+            if item['symbol'] == coin:
+                await ctx.send(f'{coin} vs. USD\nhttps://tradingview/chart{coin}USD')
+
+
     @commands.command(name='info', brief='Command that retrieves information of coin. (Full name)')
     async def coinInfo(self, ctx, coin):
         for item in data['data']:

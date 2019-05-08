@@ -60,7 +60,7 @@ class Convert(commands.Cog):
             sValue = (y/x)
             for item in data['data']:
                 if coin == item['symbol']:
-                    await ctx.send(f'The satoshi value of {coin} is:  {sValue}')
+                    await ctx.send(f'The satoshi value of {coin} is: '+"{:.8f}".format(float(sValue)))
         except:
             await ctx.send(f'Error! {coin} doesn\'t exist!')
 
@@ -74,7 +74,7 @@ class Convert(commands.Cog):
             sValue = (y/x)
             for item in data['data']:
                 if coin == item['symbol']:
-                    await ctx.send(f'The gwei value of {coin} is:  {sValue}')
+                    await ctx.send(f'The gwei value of {coin} is: '+"{:.8f}".format(float(sValue)))
         except:
             await ctx.send(f'Error! {coin} doesn\'t exist!')
 

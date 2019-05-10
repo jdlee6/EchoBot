@@ -1,8 +1,11 @@
 from requests import Request, Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 import json
-from config import APIkey
 
+
+with open('config.json', 'r') as config_file:
+    config_data = json.load(config_file)
+    
 
 url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
 
@@ -14,7 +17,7 @@ parameters = {
 }
 headers = {
     'Accepts': 'application/json',
-    'X-CMC_PRO_API_KEY': APIkey
+    'X-CMC_PRO_API_KEY': config_data['Keys']['APIkey']
 }
 
 

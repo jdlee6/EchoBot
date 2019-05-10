@@ -12,7 +12,7 @@ client = commands.Bot(command_prefix=BOT_PREFIX, description=description)
 
 
 # Setting up COG extensions
-extensions = ['cogs.convert', 'cogs.info']
+extensions = ['cogs.convert', 'cogs.info','cogs.chart']
 
 
 # Log in

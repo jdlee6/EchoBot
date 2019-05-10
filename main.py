@@ -1,9 +1,13 @@
-import discord
+import discord, json
 from discord.ext import commands
 from discord import Game
-from config import TOKEN_KEY
 
-TOKEN = TOKEN_KEY
+
+with open('config.json', 'r') as config_file:
+    config_data = json.load(config_file)
+
+    
+TOKEN = config_data['Keys']['TOKEN_KEY']
 BOT_PREFIX = ['!', '?']
 
 

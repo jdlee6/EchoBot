@@ -12,6 +12,6 @@ The creator of this program is "jdlee6" and the source for the bot can be found 
 
 - [x]Convert amnt of Coin -> USD value
 - [x]Color Code % Changes
-- [/]Implement Charts
+- [X]Implement Charts
 - [ ]Customize Help Box
 

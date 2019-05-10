@@ -4,11 +4,13 @@ EchoBot is a Discord bot designed to retrieve cryptocurrency data and to convert
 
 The creator of this program is "jdlee6" and the source for the bot can be found at: https://github.com/jdlee6/EchoBot
 
-<img src="https://imgur.com/8YUaABt.png" width="600">
+<img src="https://imgur.com/mZhdelR.png" width="600">
 
 <img src="https://imgur.com/QUE3Nf4.png" width="600">
 
-# To Do:
+<img src="https://imgur.com/k9SWxQ2.png" width="600">
+
+# Future Implementations:
 
 - [x]Convert amnt of Coin -> USD value
 - [x]Color Code % Changes

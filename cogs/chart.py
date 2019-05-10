@@ -120,6 +120,7 @@ class Chart(commands.Cog):
         plt.plot([], [], color='#7d60fd', label='5 Day SMA', linewidth=3)
         plt.plot([], [], color='#ff9830', label='20 Day SMA', linewidth=3)
         plt.subplots_adjust(left=0.15, bottom=0.19, right=0.97, top=0.94, wspace=0.2, hspace=0)
+        plt.legend()
 
 
         # Save figure to cwd

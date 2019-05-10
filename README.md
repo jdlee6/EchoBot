@@ -16,4 +16,5 @@ The creator of this program is "jdlee6" and the source for the bot can be found 
 - [x]Color Code % Changes
 - [X]Implement Charts
 - [ ]Customize Help Box
-
+- [ ]Make .json configuration file 
+- [ ]Implement Docker so installation is quick and efficient

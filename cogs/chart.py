@@ -1,6 +1,5 @@
-import discord
 from discord.ext import commands
-import requests, json
+import discord, requests, json
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -105,8 +104,8 @@ class Chart(commands.Cog):
 
 
         # Plot moving averages on candlestick_ohlc chart
-        ax1.plot(time[-sp:], av1[-sp:], color='g')
-        ax1.plot(time[-sp:], av2[-sp:], color='r')
+        ax1.plot(time[-sp:], av1[-sp:], color='#7d60fd', alpha=0.7)
+        ax1.plot(time[-sp:], av2[-sp:], color='#ff9830', alpha=0.7)
 
 
         # Tilt x axis labels for volume chart and hide the x axis of subplot 1
@@ -117,6 +116,9 @@ class Chart(commands.Cog):
         ax1.grid(True)
 
 
+        # Labels for Simple Moving Averages
+        plt.plot([], [], color='#7d60fd', label='5 Day SMA', linewidth=3)
+        plt.plot([], [], color='#ff9830', label='20 Day SMA', linewidth=3)
         plt.subplots_adjust(left=0.15, bottom=0.19, right=0.97, top=0.94, wspace=0.2, hspace=0)
 
 

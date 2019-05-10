@@ -8,13 +8,13 @@ The creator of this program is "jdlee6" and the source for the bot can be found 
 
 <img src="https://imgur.com/QUE3Nf4.png" width="600">
 
-<img src="https://imgur.com/k9SWxQ2.png" width="600">
+<img src="https://imgur.com/GSoY7Lj.png" width="600">
 
 # Future Implementations:
 
 - [x]Convert amnt of Coin -> USD value
 - [x]Color Code % Changes
-- [X]Implement Charts
+- [X]Implement Charts (SMAs with Labels)
 - [X]Make .json configuration file 
 - [ ]Implement Docker so installation is quick and efficient
 - [ ]Customize Help Box

@@ -28,7 +28,7 @@ class Chart(commands.Cog):
 
 
     # Split data from json into lists within an array
-    @commands.command(name='chart', brief='Command that charts coin to BTC (Ticker)')
+    @commands.command(name='chart', brief='Command that charts coin to BTC.')
     async def graphData(self, ctx, coin, MA1=5, MA2=20):
         
         

@@ -8,7 +8,7 @@ def usd(coin):
     for item in data['data']:
         symbol = item['symbol']
         price = item['quote']['USD']['price']
-        if item['symbol'] == coin:
+        if item['symbol'] == coin.upper():
             usdValue[symbol] = price
             return price
 
@@ -25,7 +25,7 @@ class Convert(commands.Cog):
             x = float(amnt)
             y = usd(coin)
             totalUSD = x*y
-            await ctx.send(f'{amnt} {coin} is $' + str(round(float(totalUSD), 2)))
+            await ctx.send(f'{amnt} {coin.upper()} is $' + str(round(float(totalUSD), 2)))
         except Exception as e:
             print(f'{e}')
 
@@ -59,10 +59,10 @@ class Convert(commands.Cog):
             y = usd(coin)
             sValue = (y/x)
             for item in data['data']:
-                if coin == item['symbol']:
-                    await ctx.send(f'The satoshi value of {coin} is: '+"{:.8f}".format(float(sValue)))
+                if coin.upper() == item['symbol']:
+                    await ctx.send(f'The satoshi value of {coin.upper()} is: '+"{:.8f}".format(float(sValue)))
         except:
-            await ctx.send(f'Error! {coin} doesn\'t exist!')
+            await ctx.send(f'Error! {coin.upper()} doesn\'t exist!')
 
 
     # Convert coin's USD value to into Gwei (ETH Value)
@@ -73,10 +73,10 @@ class Convert(commands.Cog):
             y = usd(coin)
             sValue = (y/x)
             for item in data['data']:
-                if coin == item['symbol']:
-                    await ctx.send(f'The gwei value of {coin} is: '+"{:.8f}".format(float(sValue)))
+                if coin.upper() == item['symbol']:
+                    await ctx.send(f'The gwei value of {coin.upper()} is: '+"{:.8f}".format(float(sValue)))
         except:
-            await ctx.send(f'Error! {coin} doesn\'t exist!')
+            await ctx.send(f'Error! {coin.upper()} doesn\'t exist!')
 
 
 def setup(client):

@@ -19,7 +19,7 @@ class Convert(commands.Cog):
     
     
     #  Converts amount of any Coin to USD
-    @commands.command(name='toUSD', brief='Command that converts any amount of coin to USD')
+    @commands.command(name='toUSD', brief='Command that converts any amount of coin to USD.')
     async def toUSD(self, ctx, amnt, coin):
         try:
             x = float(amnt)

@@ -31,8 +31,8 @@ class Info(commands.Cog):
             symbol = item['symbol']
             price = item['quote']['USD']['price']
             percent_change_24h = item['quote']['USD']['percent_change_24h']
-            if item['name'] == coin:
-                await ctx.send(f'```{coin}\nName: {name}\nSymbol: {symbol}\nCurrent rank: {cmc_rank}\nPrice: $ {round(price, 6)}\n```')
+            if item['symbol'] == coin.upper():
+                await ctx.send(f'```{coin.upper()}\nName: {name}\nSymbol: {symbol}\nCurrent rank: {cmc_rank}\nPrice: $ {round(price, 6)}\n```')
                 if str(percent_change_24h).startswith('-'):
                     await ctx.send(f'```diff\n-Percent Change (24 Hrs): {percent_change_24h} %```')
                 elif not str(percent_change_24h).startswith('-'):
@@ -46,9 +46,9 @@ class Info(commands.Cog):
             symbol = item['symbol']
             price = item['quote']['USD']['price']
             percent_change_24h = item['quote']['USD']['percent_change_24h']
-            if item['symbol'] == coin:
+            if item['symbol'] == coin.upper():
                 usdValue[symbol] = price
-                await ctx.send(f'```Price of {coin} is $ {round(price, 2)}```') 
+                await ctx.send(f'```Price of {coin.upper()} is $ {round(price, 2)}```') 
                 if str(percent_change_24h).startswith('-'):
                     await ctx.send(f'```diff\n-Percent Change (24 Hrs): {percent_change_24h} %```')
                 elif not str(percent_change_24h).startswith('-'):
@@ -59,11 +59,11 @@ class Info(commands.Cog):
     async def tokenAddy(self, ctx, coin):
         try:
             for item in data['data']:
-                if item['symbol'] == coin:
+                if item['symbol'] == coin.upper():
                     address = item['platform']['token_address']
                     await ctx.send(f'{address}')
         except:
-            await ctx.send(f'Token Address for {coin} does not exist')    
+            await ctx.send(f'Token Address for {coin.upper()} does not exist')    
 
 
 def setup(client):

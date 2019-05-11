@@ -23,7 +23,7 @@ class Info(commands.Cog):
                 break
 
 
-    @commands.command(name='info', brief='Command that retrieves information of coin. (Full name)')
+    @commands.command(name='info', brief='Command that retrieves information of coin.')
     async def coinInfo(self, ctx, coin):
         for item in data['data']:
             cmc_rank = item['cmc_rank']
@@ -39,7 +39,7 @@ class Info(commands.Cog):
                     await ctx.send(f'```diff\n+Percent Change (24 Hrs): {percent_change_24h} %```')
 
                     
-    @commands.command(name='usd', brief='Command that retrieves USD value of coin. (Ticker)')
+    @commands.command(name='usd', brief='Command that retrieves USD value of coin.')
     async def getusd(self, ctx, coin):
         usdValue = dict()
         for item in data['data']:
@@ -55,7 +55,7 @@ class Info(commands.Cog):
                     await ctx.send(f'```diff\n+Percent Change (24 Hrs): {percent_change_24h} %```')
 
 
-    @commands.command(name='addy', brief='Command that retrieves token address of coin. (Ticker)')
+    @commands.command(name='addy', brief='Command that retrieves token address of coin.')
     async def tokenAddy(self, ctx, coin):
         try:
             for item in data['data']:

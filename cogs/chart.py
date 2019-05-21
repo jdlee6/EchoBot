@@ -8,7 +8,7 @@ import matplotlib.ticker as mticker
 from matplotlib import style
 from mpl_finance import candlestick_ohlc
 import datetime as dt 
-
+from matplotlib.ticker import ScalarFormatter, FormatStrFormatter
 
 # Define Moving Average Function
 def movingaverage(values, window):
@@ -81,6 +81,7 @@ class Chart(commands.Cog):
         time = mdates.date2num(time)
         new_format = mdates.DateFormatter('%Y-%m-%d')
         ax1.xaxis.set_major_formatter(new_format)
+        ax1.yaxis.set_major_formatter(FormatStrFormatter('%.8f'))
 
 
         # Create OHLC list, and append data from dataset

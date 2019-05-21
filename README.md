@@ -8,7 +8,7 @@ The creator of this program is "jdlee6" and the source for the bot can be found 
 
 <img src="https://imgur.com/QUE3Nf4.png" width="600">
 
-<img src="https://imgur.com/GSoY7Lj.png" width="600">
+<img src="https://imgur.com/EN8ZDty.png" width="600">
 
 # Future Implementations:
 

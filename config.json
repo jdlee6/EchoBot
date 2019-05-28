@@ -1,6 +1,1 @@
-{"Keys": 
-    {
-    "TOKEN_KEY": "Insert Discord Bot Token Key Here",
-    "APIkey": "Insert Coinmarketcap API Key Here"
-    }
-}
+"use environment variables for discord bot key and cmc api key"

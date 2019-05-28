@@ -17,7 +17,7 @@ parameters = {
 }
 headers = {
     'Accepts': 'application/json',
-    'X-CMC_PRO_API_KEY': config_data['Keys']['APIkey']
+    'X-CMC_PRO_API_KEY': os.environ.get('APIkey')
 }
 
 

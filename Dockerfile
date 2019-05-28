@@ -1,5 +1,5 @@
 FROM python:3
-WORKDIR /home/joe/Desktop/EchoBot_Dockerized
+WORKDIR <path of repo>
 COPY requirements.txt requirements.txt
 ENV TOKEN="Insert Discord Bot Token Here"
 ENV APIkey="Insert Coinmarketcap API Key Here"

@@ -8,7 +8,7 @@ The creator of this program is "jdlee6" and the source for the bot can be found 
 1. Install Docker `sudo apt install docker.io`
 
 2. Build Docker Image `sudo docker build -t <image name> <path of project>`
-   - Make sure to set environment variables such as Discord Bot Token and Coinmarketcap API key in the Dockerfile
+   - Make sure to define the path of the working directory and make sure to set the environment variables (Discord Bot Token and Coinmarketcap API key) in the Dockerfile
 
 3. To run EchoBot from Docker image `sudo docker run <image name>`
 

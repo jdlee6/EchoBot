@@ -1,6 +1,6 @@
 from requests import Request, Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
-import json
+import json, os
 
 
 with open('config.json', 'r') as config_file:

@@ -4,6 +4,14 @@ EchoBot is a Discord bot designed to retrieve cryptocurrency data and to convert
 
 The creator of this program is "jdlee6" and the source for the bot can be found at: https://github.com/jdlee6/EchoBot
 
+How to install/use on Linux (Docker):
+1. Install Docker `sudo apt install docker.io`
+
+2. Build Docker Image `sudo docker build -t <image name> <path of project>`
+   - Make sure to set environment variables such as Discord Bot Token and Coinmarketcap API key in the Dockerfile
+
+3. To run EchoBot from Docker image `sudo docker run <image name>`
+
 <img src="https://imgur.com/zdAwQlA.png" width="600">
 
 <img src="https://imgur.com/QUE3Nf4.png" width="600">
@@ -16,5 +24,5 @@ The creator of this program is "jdlee6" and the source for the bot can be found 
 - [x]Color Code % Changes
 - [X]Implement Charts (SMAs with Labels)
 - [X]Make .json configuration file 
-- [ ]Implement Docker so installation is quick and efficient
+- [X]Implement Docker so installation is quick and efficient
 - [ ]Customize Help Box

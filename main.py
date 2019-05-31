@@ -1,4 +1,4 @@
-import discord, json, os
+import discord, json, os, time
 from discord.ext import commands
 from discord import Game
 
@@ -11,7 +11,10 @@ TOKEN = os.environ.get('TOKEN')
 BOT_PREFIX = ['!', '?']
 
 
-description = '''EchoBot is a Discord bot designed to retrieve cryptocurrency data and to convert various currencies into their relative satoshi/gwei values. This program is designed to obtain real time data from Coinmarketcap.com which implements REST APIs. To use the program type in either a ! or ? as the command prefix followed by the command and the ticker symbol of the coin. The creator of this program is "jdlee6" and the source for the bot can be found at: https://github.com/jdlee6/EchoBot'''
+description = '''EchoBot is a Discord bot designed to retrieve cryptocurrency data and to convert various currencies into their relative satoshi/gwei values. This program is designed to obtain real time data from Coinmarketcap.com which implements REST APIs. To use the program type in either a ! or ? as the command prefix followed by the command and the ticker symbol of the coin. 
+The creator of this program is "jdlee6" and the source for the bot can be found at: https://github.com/jdlee6/EchoBot
+
+Type in <!>re to retrieve the latest data from Coinmarketcap'''
 client = commands.Bot(command_prefix=BOT_PREFIX, description=description)
 
 
@@ -52,6 +55,18 @@ async def unload(extension):
         except Exception as e:
             print(f'{extension} cannot be unloaded. {e}')
 
+
+# Reload extensions after data is refreshed and updated
+@client.command(name='re', hidden=True, brief='Command to unload and reload modules')
+async def refresh(extension):
+    for extension in extensions:
+        try:
+            client.unload_extension(extension)
+            time.sleep(1)
+            client.load_extension(extension)
+            print(f'Reloaded {extension}!')
+        except Exception as e:
+            print(f'{extension} cannot be unloaded. {e}')
 
 # Finalizing COG extensions
 if __name__ == "__main__":

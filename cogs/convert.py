@@ -1,11 +1,11 @@
 import discord
 from discord.ext import commands
-from cmcAPI import data
+from cmcAPI import get_data
 
 
 def usd(coin):
     usdValue = dict()
-    for item in data['data']:
+    for item in get_data()['data']:
         symbol = item['symbol']
         price = item['quote']['USD']['price']
         if item['symbol'] == coin.upper():
@@ -58,7 +58,7 @@ class Convert(commands.Cog):
             x = usd('BTC')
             y = usd(coin)
             sValue = (y/x)
-            for item in data['data']:
+            for item in get_data()['data']:
                 if coin.upper() == item['symbol']:
                     await ctx.send(f'The satoshi value of {coin.upper()} is: '+"{:.8f}".format(float(sValue)))
         except:
@@ -72,7 +72,7 @@ class Convert(commands.Cog):
             x = usd('ETH')
             y = usd(coin)
             sValue = (y/x)
-            for item in data['data']:
+            for item in get_data()['data']:
                 if coin.upper() == item['symbol']:
                     await ctx.send(f'The gwei value of {coin.upper()} is: '+"{:.8f}".format(float(sValue)))
         except:

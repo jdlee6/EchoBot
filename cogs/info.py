@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from cmcAPI import data
+from cmcAPI import get_data
 
 
 class Info(commands.Cog):
@@ -12,7 +12,7 @@ class Info(commands.Cog):
     async def topten(self, ctx):
         i = 0
         print('The top ten coins:\n')
-        for item in data['data']:
+        for item in get_data()['data']:
             rank = item['cmc_rank']
             name = item['name']
             symbol = item['symbol']
@@ -25,7 +25,7 @@ class Info(commands.Cog):
 
     @commands.command(name='info', brief='Command that retrieves information of coin.')
     async def coinInfo(self, ctx, coin):
-        for item in data['data']:
+        for item in get_data()['data']:
             cmc_rank = item['cmc_rank']
             name = item['name']
             symbol = item['symbol']
@@ -42,7 +42,7 @@ class Info(commands.Cog):
     @commands.command(name='usd', brief='Command that retrieves USD value of coin.')
     async def getusd(self, ctx, coin):
         usdValue = dict()
-        for item in data['data']:
+        for item in get_data()['data']:
             symbol = item['symbol']
             price = item['quote']['USD']['price']
             percent_change_24h = item['quote']['USD']['percent_change_24h']
@@ -58,7 +58,7 @@ class Info(commands.Cog):
     @commands.command(name='addy', brief='Command that retrieves token address of coin.')
     async def tokenAddy(self, ctx, coin):
         try:
-            for item in data['data']:
+            for item in get_data()['data']:
                 if item['symbol'] == coin.upper():
                     address = item['platform']['token_address']
                     await ctx.send(f'{address}')

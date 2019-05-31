@@ -12,7 +12,7 @@ url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
 
 parameters = {
     'start':'1',
-    'limit':'5000',
+    'limit':'200',
     'convert':'USD'
 }
 headers = {
@@ -25,15 +25,7 @@ session = Session()
 session.headers.update(headers)
 
 
-def reloadapi():
-    try:
-        global data
-        # retreives latest data every 90 minutes
-        threading.Timer(5400, reloadapi).start()
-        response = session.get(url, params=parameters)
-        data = json.loads(response.text)
-        print('Data retrieved . . . Grabbing new data in 5 minutes . . .')
-    except (ConnectionError, Timeout, TooManyRedirects) as e:
-        print(e)
-
-reloadapi()
+def get_data():
+    response = session.get(url, params=parameters)
+    data = json.loads(response.text)
+    return data

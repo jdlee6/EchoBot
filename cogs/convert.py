@@ -8,7 +8,7 @@ def usd(coin):
     for item in get_data()['data']:
         symbol = item['symbol']
         price = item['quote']['USD']['price']
-        if item['symbol'] == coin.upper():
+        if coin.upper() == item['symbol']:
             usdValue[symbol] = price
             return price
 
@@ -23,7 +23,7 @@ class Convert(commands.Cog):
     async def toUSD(self, ctx, amnt, coin):
         try:
             x = float(amnt)
-            y = usd(coin)
+            y = usd(coin.upper())
             totalUSD = x*y
             await ctx.send(f'{amnt} {coin.upper()} is $' + str(round(float(totalUSD), 2)))
         except Exception as e:
@@ -49,34 +49,6 @@ class Convert(commands.Cog):
     async def convertToETH(self, ctx, usdAmnt):
         z = usd('ETH')
         await ctx.send(f'${usdAmnt} converted to ETH: ' + str(int(usdAmnt) / z))
-
-
-    # Converts coin's USD value into Satoshi (BTC Value)
-    @commands.command(brief='Command that converts USD value of coin to satoshi value.')
-    async def sat(self, ctx, coin):
-        try:
-            x = usd('BTC')
-            y = usd(coin)
-            sValue = (y/x)
-            for item in get_data()['data']:
-                if coin.upper() == item['symbol']:
-                    await ctx.send(f'The satoshi value of {coin.upper()} is: '+"{:.8f}".format(float(sValue)))
-        except:
-            await ctx.send(f'Error! {coin.upper()} doesn\'t exist!')
-
-
-    # Convert coin's USD value to into Gwei (ETH Value)
-    @commands.command(brief='Command that converts USD value of coin to gwei value.')
-    async def gwei(self, ctx, coin):
-        try:
-            x = usd('ETH')
-            y = usd(coin)
-            sValue = (y/x)
-            for item in get_data()['data']:
-                if coin.upper() == item['symbol']:
-                    await ctx.send(f'The gwei value of {coin.upper()} is: '+"{:.8f}".format(float(sValue)))
-        except:
-            await ctx.send(f'Error! {coin.upper()} doesn\'t exist!')
 
 
 def setup(client):

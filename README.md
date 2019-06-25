@@ -11,11 +11,14 @@ EchoBot is a Discord bot designed to retrieve cryptocurrency data and to convert
 
 3. To run EchoBot from Docker image `sudo docker run <image name>`
 
+
+## Demo
 <img src="https://imgur.com/JGnSYiZ.png" width="600">
 
 <img src="https://imgur.com/cXvtwAO.png" width="600">
 
 <img src="https://imgur.com/EN8ZDty.png" width="600">
+
 
 ## Future Implementations
 

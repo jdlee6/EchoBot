@@ -2,8 +2,15 @@
 
 EchoBot is a Discord bot designed to retrieve cryptocurrency data and to convert various currencies into their relative satoshi/gwei values. This program is designed to obtain real time data from https://coinmarketcap.com which implements REST APIs. Use either a ! or ? as the command prefix or customize it by changing the source code.
 
+## Invite EchoBot Into Your Discord Server
+1. Copy and paste this link into your url
+`https://discordapp.com/api/oauth2/authorize?client_id=573563489629634561&permissions=0&scope=bot`
 
-## Linux Usage (Docker)
+2. Select the desired discord server
+
+3. Voila!
+
+## Docker Installation (Linux commands)
 1. Install Docker `sudo apt install docker.io`
 
 2. Build Docker Image `sudo docker build -t <image name> <path of project>`
